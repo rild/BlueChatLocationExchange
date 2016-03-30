@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="rimp.rild.com.android.bluechatlocationexchange">
+
+    //GPS
+    <!-- 位置情報 GPSから -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 位置情報 ネットワークから -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- これは何だろう？？？ -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_UPDATES" />
+
+    //Bluetooth
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/garirei_tsukuba"
+        android:label="@string/app_name"
+        android:logo="@drawable/ic_launcher_white"
+        android:theme="@style/Theme.AppCompat"
+        android:largeHeap="true" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".HostActivity"
+            android:label="@string/title_activity_host"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="rimp.rild.com.android.bluechatlocationexchange.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ClientActivity"
+            android:label="@string/title_activity_client"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="rimp.rild.com.android.bluechatlocationexchange.MainActivity" />
+        </activity>
+    </application>
+
+</manifest>
